@@ -1,0 +1,21 @@
+<app-header></app-header>
+<app-nav></app-nav>
+
+<main>
+  <h2 [innerHTML]="'Our majestic plants'"></h2>
+
+  <div *ngFor="let plant of plants" class="product">
+    <div class="product-content" (click)="navigateToPlantDetail(plant.id)">
+      <a [routerLink]="['/plant', plant.id]">
+        <img [src]="'assets/images/' + plant.image">
+        <h3>{{ plant.name }}</h3>
+        <p>{{ plant.desc }}</p>
+        <p>{{ plant.country | uppercase }}</p>
+      </a>
+      <button class="edit-button" (click)="navigateToEditPage(plant.id)">Edit</button>
+      <button class="delete-button">Delete</button>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

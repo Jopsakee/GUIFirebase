@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<app-nav></app-nav>
+
+<main>
+  <h2>Add a Plant</h2>
+  <div>
+    <h2>Add a Plant</h2>
+    <form [formGroup]="plantForm">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name">
+      </div>
+      <div>
+        <label for="country">Country</label>
+        <input type="text" id="country" formControlName="country">
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+      <div>
+        <label for="image">Image URL</label>
+        <input type="text" id="image" formControlName="image">
+      </div>
+      <button (click)="addPlant()">Add</button>
+    </form>
+  </div>
+  
+</main>
+
+<app-footer></app-footer>

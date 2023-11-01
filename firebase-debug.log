@@ -1,0 +1,16 @@
+[debug] [2023-11-01T22:57:59.681Z] ----------------------------------------------------------------------
+[debug] [2023-11-01T22:57:59.683Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Gebruiker\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2023-11-01T22:57:59.683Z] CLI Version:   12.8.0
+[debug] [2023-11-01T22:57:59.684Z] Platform:      win32
+[debug] [2023-11-01T22:57:59.684Z] Node Version:  v19.7.0
+[debug] [2023-11-01T22:57:59.684Z] Time:          Wed Nov 01 2023 23:57:59 GMT+0100 (Central European Standard Time)
+[debug] [2023-11-01T22:57:59.684Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-01T22:57:59.761Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-01T22:57:59.761Z] > authorizing via signed-in user (joppefromb@gmail.com)
+[debug] [2023-11-01T22:57:59.844Z] java version "17.0.2" 2022-01-18 LTS
+
+[debug] [2023-11-01T22:57:59.845Z] Java(TM) SE Runtime Environment (build 17.0.2+8-LTS-86)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.2+8-LTS-86, mixed mode, sharing)
+
+[debug] [2023-11-01T22:57:59.863Z] Parsed Java major version: 17
