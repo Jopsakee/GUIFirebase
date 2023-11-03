@@ -19,6 +19,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { FirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   imports: [
@@ -29,6 +32,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() =>getFirestore()),
+    provideAuth(() => getAuth()),
     AngularFireStorageModule,
     FirestoreModule,
     AngularFireModule
@@ -42,6 +46,8 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     EditComponent,
     HomeComponent,
     PlantdetailComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   providers: [
     ServerService,

@@ -1,0 +1,32 @@
+<app-header></app-header>
+<app-nav></app-nav>
+
+    <main>
+        <div class="container">
+            <h1>Register a New Account</h1>
+            <form [formGroup]="reactiveForm" (ngSubmit)="onSignup()">       
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" formControlName="email">
+                </div>
+                <span class="help-block" *ngIf="reactiveForm.get('email')!.hasError('email') && reactiveForm.get('email')!.touched">
+                    This is an invalid email
+                </span>  
+                <div class="form-group">
+                    <label for="wachtwoord">Password</label>
+                    <input type="password" class="form-control" id="wachtwoord" name="wachtwoord" placeholder="Enter your password" formControlName="wachtwoord">
+                </div>
+                <span class="help-block" *ngIf="!reactiveForm.get('wachtwoord')!.valid && reactiveForm.get('wachtwoord')!.touched">
+                    Password needs a minimum length of 6
+                  </span>
+                <div class="form-group"><button type="submit" [disabled]="!reactiveForm.valid">Register</button></div>
+                <span *ngIf="!reactiveForm.valid && reactiveForm.touched" class="help-block">
+                    Please enter a correct value in all fields.
+                  </span>
+                <p class="text-left">Already have an account? <a routerLink="/login">Login</a></p>
+            </form>
+        </div>
+    </main>
+
+<app-footer></app-footer>
+
