@@ -13,7 +13,12 @@ import { PlantdetailComponent } from './plantdetail/plantdetail.component';
 import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideFirebaseApp, initializeApp, FirebaseApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore, Firestore } from '@angular/fire/firestore';
+import { getFirestore, provideFirestore, Firestore, collection, collectionData, addDoc, DocumentData, updateDoc, doc } from '@angular/fire/firestore';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire/compat';
+import { FirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 @NgModule({
   imports: [
@@ -21,8 +26,12 @@ import { getFirestore, provideFirestore, Firestore } from '@angular/fire/firesto
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() =>getFirestore()),
+    AngularFireStorageModule,
+    FirestoreModule,
+    AngularFireModule
   ],
   declarations: [
     AppComponent,
@@ -35,7 +44,8 @@ import { getFirestore, provideFirestore, Firestore } from '@angular/fire/firesto
     PlantdetailComponent,
   ],
   providers: [
-    ServerService
+    ServerService,
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig }
   ],
   bootstrap: [AppComponent]
 })

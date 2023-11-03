@@ -1,1 +1,17 @@
-<p>plantdetail works!</p>
+<app-header></app-header>
+<app-nav></app-nav>
+
+<main class="plant-detail-container">
+  <div class="plant-detail-card">
+    <div class="plant-image">
+      <img *ngIf="plants[0].image" [src]="plants[0].image" class="plant-image">
+    </div>
+    <div class="plant-details">
+      <h3 class="plant-name">{{ plants[0].name }}</h3>
+      <p class="plant-description">{{ plants[0].description }}</p>
+      <p class="plant-country">{{ plants[0].country | uppercase }}</p>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

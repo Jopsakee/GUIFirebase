@@ -4,8 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "site": "plantgallery-5c594",
-    "public": "public",
+    "public": "dist/guifirebase",
     "ignore": [
       "firebase.json",
       "**/.*",

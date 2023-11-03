@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServerService } from '../server.service';
+import { plants } from '../plants';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,31 +10,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  plants: any[] = [];
+  plantSubscription!: Subscription;
+  plants : plants[] = [];
+  constructor(private router: Router, private serverService: ServerService) { }
 
-  constructor(private http: HttpClient, private router: Router) { }
-
-  ngOnInit() {
-    this.fetchPlants();
+  ngOnInit(): void{
+    this.plants = [];
+    this.onGetPlants();
+  }
+  onGetPlants() {
+    this.plantSubscription = this.serverService.getPlants()
+      .subscribe(plants => {
+        console.log(plants);
+        this.plants = plants;
+      })
   }
 
-  fetchPlants() {
-    this.http.get<any[]>('http://localhost:3000/api/plants').subscribe(
-      (response) => {
-        this.plants = response.map((plant) => {
-          plant.image = String.fromCharCode.apply(null, plant.image.data);
-          return plant;
-        });
-      },
-      (error) => {
-        console.error('Failed to fetch plants:', error);
-      }
-    );
+  deletePlant(id: any){
+    if (confirm("Are you sure you want to delete this plant?")){
+    this.serverService.deletePlant(id);
+    this.router.navigate(['']);
+    }
   }
-  navigateToEditPage(plantId: number) {
-    this.router.navigate(['/plantedit', plantId]);
+
+  navigateToEditPage(plantId: string) {
+    this.router.navigate(['/edit', plantId]);
   }
-  navigateToPlantDetail(plantId: number) {
-    this.router.navigate(['/plant', plantId]);
+  navigateToPlantDetail(plantId: any) {
+    this.router.navigate(['/plantdetail/', plantId]);
   }
 }

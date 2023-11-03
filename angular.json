@@ -25,7 +25,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/app/home/home.component.css",
+              "src/app/add/add.component.css",
+              "src/app/edit/edit.component.css",
+              "src/app/header/header.component.css",
+              "src/app/footer/footer.component.css",
+              "src/app/plantdetail/plantdetail.component.css"
             ],
             "scripts": []
           },
@@ -34,8 +40,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "6mb"
                 },
                 {
                   "type": "anyComponentStyle",

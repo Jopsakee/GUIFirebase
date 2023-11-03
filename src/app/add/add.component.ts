@@ -1,34 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ServerService } from '../server.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { plants } from '../plants';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
 })
 export class AddComponent {
-  plantForm: FormGroup;
+  plants : plants[] = [];
+  @ViewChild('plantForm') form!: NgForm;
+  plantname!: any;
+  plantcountry!: any;
+  plantdescription!: any;
+  plantimage!: any;
+  constructor(private serverService: ServerService, private router: Router) {}
 
-  constructor(private serverService: ServerService) {
-    this.plantForm = new FormGroup({
-      name: new FormControl('', [Validators.required]),
-      country: new FormControl('', [Validators.required]),
-      description: new FormControl(''),
-      image: new FormControl(''),
-    });
-  }
-
-  addPlant() {
-    if (this.plantForm.valid) {
-      this.serverService
-        .addPlantToFirebase(this.plantForm.value)
-        .then(() => {
-          console.log('Plant added to Firebase successfully');
-          this.plantForm.reset();
+  addPlant(): void{
+    const newPlant = {...this.form.value} as plants;
+    this.serverService.createPlant(newPlant)
+      .subscribe(
+        ((plants) => {
+          this.router.navigate(['']);
         })
-        .catch((error) => {
-          console.error('Error adding plant to Firebase:', error);
-        });
-    }
+      )
   }
 }

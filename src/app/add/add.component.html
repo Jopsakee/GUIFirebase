@@ -3,27 +3,26 @@
 <app-nav></app-nav>
 
 <main>
-  <h2>Add a Plant</h2>
   <div>
     <h2>Add a Plant</h2>
-    <form [formGroup]="plantForm">
+    <form #plantForm="ngForm">
       <div>
         <label for="name">Name</label>
-        <input type="text" id="name" formControlName="name">
+        <input type="text" id="name" name="name" [(ngModel)]="plantname">
       </div>
       <div>
         <label for="country">Country</label>
-        <input type="text" id="country" formControlName="country">
+        <input type="text" id="country" name="country" [(ngModel)]="plantcountry">
       </div>
       <div>
         <label for="description">Description</label>
-        <textarea id="description" formControlName="description"></textarea>
+        <textarea id="description" name="description" [(ngModel)]="plantdescription"></textarea>
       </div>
       <div>
         <label for="image">Image URL</label>
-        <input type="text" id="image" formControlName="image">
+        <input type="text" id="image" name="image" [(ngModel)]="plantimage">
       </div>
-      <button (click)="addPlant()">Add</button>
+      <button type="submit" (click)="addPlant()">Add</button>
     </form>
   </div>
   
