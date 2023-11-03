@@ -22,7 +22,7 @@ export class AddComponent {
     this.serverService.createPlant(newPlant)
       .subscribe(
         ((plants) => {
-          this.router.navigate(['']);
+          this.router.navigate(['/home']);
         })
       )
   }

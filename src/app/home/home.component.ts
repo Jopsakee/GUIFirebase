@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   deletePlant(id: any){
     if (confirm("Are you sure you want to delete this plant?")){
     this.serverService.deletePlant(id);
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
     }
   }
 

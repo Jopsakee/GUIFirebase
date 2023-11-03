@@ -38,7 +38,7 @@ export class AuthService {
             (token: string) =>{
               this.token = token;
               localStorage.setItem('token',token);
-              this.router.navigate(['']);
+              this.router.navigate(['/home']);
             }
           );
             return true;

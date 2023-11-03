@@ -22,6 +22,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { HomeguestComponent } from './homeguest/homeguest.component';
 
 @NgModule({
   imports: [
@@ -48,6 +49,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     PlantdetailComponent,
     LoginComponent,
     SignupComponent,
+    HomeguestComponent,
   ],
   providers: [
     ServerService,

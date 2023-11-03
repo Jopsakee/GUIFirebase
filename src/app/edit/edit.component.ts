@@ -20,6 +20,6 @@ export class EditComponent {
 
   updatePlant(){
     this.serverService.updatePlant(this.form.value,this.route.snapshot.params['id']);
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
   }
 }
