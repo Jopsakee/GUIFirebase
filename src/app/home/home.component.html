@@ -2,18 +2,23 @@
 <app-nav></app-nav>
 
 <main>
-  <h2 [innerHTML]="'Our majestic plants'"></h2>
+  <div class="title-container">
+    <h2 [innerHTML]="'Your majestic plants'"></h2>
+    <button (click)="toggleSortOrder()" class="sort-button">Sort by Name</button>
+  </div>
 
-  <div *ngFor="let plant of plants" class="product">
-    <div class="product-content">
-      <a [routerLink]="['/plantdetail/', plant.id]">
-        <img [src]="plant.image" alt="{{ plant.name }} Image">
-        <h3>{{ plant.name }}</h3>
-        <p>{{ plant.description }}</p>
-        <p>{{ plant.country | uppercase }}</p>
-      </a>
-      <button class="edit-button" routerLink="/edit/{{plant.id}}">Edit</button>
-      <button class="delete-button" (click)="deletePlant(plant.id)">Delete</button>
+  <div class="product-container">
+    <div *ngFor="let plant of plants" class="product">
+      <div class="product-content">
+        <a [routerLink]="['/plantdetail/', plant.id]">
+          <img [src]="plant.image" alt="{{ plant.name }} Image">
+          <h3>{{ plant.name }}</h3>
+          <p>{{ plant.description }}</p>
+          <p>{{ plant.country | uppercase }}</p>
+        </a>
+        <button class="edit-button" routerLink="/edit/{{plant.id}}">Edit</button>
+        <button class="delete-button" (click)="deletePlant(plant.id)">Delete</button>
+      </div>
     </div>
   </div>
 </main>

@@ -48,7 +48,7 @@ input[type="password"] {
 }
 
 button {
-    background-color: #3498db;
+    background-color: #449944;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -59,7 +59,7 @@ button {
 }
 
 button:hover {
-    background-color: #267db8;
+    background-color: #116611;
 }
 .alert{
     color: red;

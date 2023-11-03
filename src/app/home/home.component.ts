@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 export class HomeComponent implements OnInit {
   plantSubscription!: Subscription;
   plants : plants[] = [];
+  sortAscending = true;
   constructor(private router: Router, private serverService: ServerService) { }
 
   ngOnInit(): void{
@@ -32,7 +33,20 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/home']);
     }
   }
+  toggleSortOrder() {
+    this.sortAscending = !this.sortAscending;
+    this.sortPlants();
+  }
 
+  sortPlants() {
+    this.plants.sort((a, b) => {
+      if (this.sortAscending) {
+        return a.name.localeCompare(b.name);
+      } else {
+        return b.name.localeCompare(a.name);
+      }
+    });
+  }
   navigateToEditPage(plantId: string) {
     this.router.navigate(['/edit', plantId]);
   }
