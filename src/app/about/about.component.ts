@@ -22,6 +22,7 @@ export class AboutComponent implements OnInit {
     const mailtoUrl = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
 
     window.open(mailtoUrl, '_blank');
+    this.router.navigate(['/home']);
   }
 
   navigateToHome() {
