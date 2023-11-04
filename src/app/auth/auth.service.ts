@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth'
 import { ServerService } from '../server.service';
+import { Observable } from 'rxjs';
 //import { AdminGuard } from './admin.guard';
 
 

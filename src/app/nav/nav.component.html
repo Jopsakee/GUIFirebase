@@ -9,6 +9,9 @@
         <li><a routerLink="/add" routerLinkActive="active">Add Plant</a></li>
         <li><a (click)="onLogout()">Logout</a></li>
       </ng-template>
+      <ng-template [ngIf]="authService.getUid() == 'hDxbvlAcC5RvvDbsPpw3J00gQQV2'">
+        <li><a routerLink="/adminpanel" routerLinkActive="active">Admin</a></li>
+      </ng-template>
     </ul>
     
 </nav>

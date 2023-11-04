@@ -23,6 +23,8 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeguestComponent } from './homeguest/homeguest.component';
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 
 @NgModule({
   imports: [
@@ -34,6 +36,7 @@ import { HomeguestComponent } from './homeguest/homeguest.component';
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() =>getFirestore()),
     provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
     AngularFireStorageModule,
     FirestoreModule,
     AngularFireModule
@@ -50,6 +53,7 @@ import { HomeguestComponent } from './homeguest/homeguest.component';
     LoginComponent,
     SignupComponent,
     HomeguestComponent,
+    AdminpanelComponent,
   ],
   providers: [
     ServerService,
