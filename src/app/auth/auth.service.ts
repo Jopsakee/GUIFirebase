@@ -17,14 +17,18 @@ export class AuthService {
       this.token = localStorage.getItem('token');
     }
    }
-  signup(email: string, wachtwoord: string): Promise<string> {
+   signup(email: string, wachtwoord: string): Promise<string> {
     return createUserWithEmailAndPassword(this.auth, email, wachtwoord)
-      .catch(err =>{
-        console.log(err);
-        return err;
-      })
-      .then(() =>{
+      .then(() => {
         return 'success';
+      })
+      .catch((error) => {
+        if (error.code === 'auth/email-already-in-use') {
+          return 'Email is already in use';
+        } else {
+          console.log(error);
+          return 'An error occurred while signing up';
+        }
       });
   }
 

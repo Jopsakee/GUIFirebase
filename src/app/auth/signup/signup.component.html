@@ -11,7 +11,10 @@
                 </div>
                 <span class="help-block" *ngIf="reactiveForm.get('email')!.hasError('email') && reactiveForm.get('email')!.touched">
                     This is an invalid email
-                </span>  
+                </span>
+                <span class="help-block" *ngIf="reactiveForm.hasError('customError')">
+                    {{ reactiveForm.getError('customError') }}
+                  </span>
                 <div class="form-group">
                     <label for="wachtwoord">Password</label>
                     <input type="password" class="form-control" id="wachtwoord" name="wachtwoord" placeholder="Enter your password" formControlName="wachtwoord">
