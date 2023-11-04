@@ -10,21 +10,21 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./plantdetail.component.css']
 })
 export class PlantdetailComponent {
-  
-  constructor(private route: ActivatedRoute, private router: Router, private serverService: ServerService) {}
+
+  constructor(private route: ActivatedRoute, private router: Router, private serverService: ServerService) { }
   plantSubscription!: Subscription;
-  plants : plants[] = [];
-  ngOnInit(): void{
+  plants: plants[] = [];
+  ngOnInit(): void {
     const plantId = this.route.snapshot.params['id'];
     if (plantId !== null) {
       this.detailPlant(plantId);
       this.onGetPlants();
       console.log(plants);
-    console.log(plantId);
+      console.log(plantId);
     } else {
     }
   }
-  
+
   onGetPlants() {
     this.plantSubscription = this.serverService.getPlants()
       .subscribe(plants => {
@@ -33,7 +33,7 @@ export class PlantdetailComponent {
       })
   }
 
-  detailPlant(id: string){
+  detailPlant(id: string) {
     this.serverService.detailPlant(id);
   }
 }

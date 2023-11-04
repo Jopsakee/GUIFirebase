@@ -1,79 +1,77 @@
 .plant-detail-container {
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  .plant-detail-card {
-    position: relative;
-    display: flex;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .plant-detail-card::before,
-  .plant-detail-card::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    width: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .plant-detail-card::before {
-    left: 0;
-  }
-  
-  .plant-detail-card::after {
-    right: 0;
-  }
-  
-  .plant-image {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f4;
-  }
-  
-  .plant-image img {
-    max-width: 100%;
-    max-height: 300px;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .plant-details {
-    flex: 2;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #fff;
-  }
-  
-  .plant-name {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .plant-country {
-    font-size: 18px;
-    color: #777;
-    margin-bottom: 10px;
-  }
-  
-  .plant-description {
-    font-size: 18px;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.plant-detail-card {
+  position: relative;
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.plant-detail-card::before,
+.plant-detail-card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.plant-detail-card::before {
+  left: 0;
+}
+
+.plant-detail-card::after {
+  right: 0;
+}
+
+.plant-image {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
+.plant-image img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plant-details {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.plant-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.plant-country {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.plant-description {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}

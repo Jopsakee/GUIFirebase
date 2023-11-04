@@ -8,16 +8,16 @@ import { ServerService } from '../server.service';
   providedIn: 'root'
 })
 export class AuthService {
-  
+
   token: string | null = null;
 
-  
-  constructor(private router: Router, private auth: Auth, private serverService: ServerService) { 
-    if(localStorage.getItem('token')){
+
+  constructor(private router: Router, private auth: Auth, private serverService: ServerService) {
+    if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
     }
-   }
-   signup(email: string, wachtwoord: string): Promise<string> {
+  }
+  signup(email: string, wachtwoord: string): Promise<string> {
     return createUserWithEmailAndPassword(this.auth, email, wachtwoord)
       .then(() => {
         return 'success';
@@ -33,25 +33,25 @@ export class AuthService {
   }
 
 
-  login(email:string, wachtwoord:string): Promise<boolean> {
+  login(email: string, wachtwoord: string): Promise<boolean> {
     return signInWithEmailAndPassword(this.auth, email, wachtwoord)
-      .then(() =>{
-         this.auth.currentUser?.getIdToken()
+      .then(() => {
+        this.auth.currentUser?.getIdToken()
           .then(
-            (token: string) =>{
+            (token: string) => {
               this.token = token;
-              localStorage.setItem('token',token);
+              localStorage.setItem('token', token);
               this.router.navigate(['/home']);
             }
           );
-            return true;
+        return true;
       })
-          .catch(
-            error => {
-              console.log(error);
-              return false;
-            } 
-            
+      .catch(
+        error => {
+          console.log(error);
+          return false;
+        }
+
       );
   }
 
@@ -71,14 +71,14 @@ export class AuthService {
   }
 
   getUid() {
-    if(this.auth.currentUser){
+    if (this.auth.currentUser) {
       return this.auth.currentUser.uid;
     }
-    else{
+    else {
       return null;
     }
   }
 
- 
-  
+
+
 }

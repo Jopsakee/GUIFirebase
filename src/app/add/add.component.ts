@@ -9,16 +9,16 @@ import { plants } from '../plants';
   templateUrl: './add.component.html',
 })
 export class AddComponent {
-  plants : plants[] = [];
+  plants: plants[] = [];
   @ViewChild('plantForm') form!: NgForm;
   plantname!: any;
   plantcountry!: any;
   plantdescription!: any;
   plantimage!: any;
-  constructor(private serverService: ServerService, private router: Router) {}
+  constructor(private serverService: ServerService, private router: Router) { }
 
-  addPlant(): void{
-    const newPlant = {...this.form.value} as plants;
+  addPlant(): void {
+    const newPlant = { ...this.form.value } as plants;
     this.serverService.createPlant(newPlant)
       .subscribe(
         ((plants) => {

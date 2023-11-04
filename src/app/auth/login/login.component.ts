@@ -16,16 +16,16 @@ export class LoginComponent implements OnInit {
     this.invalidLogin = false;
   }
 
-  onLogin(form: NgForm){
+  onLogin(form: NgForm) {
     const email = form.value.email;
     const wachtwoord = form.value.wachtwoord;
     this.authService.login(email, wachtwoord)
       .then((response) => {
-        if(!response){
+        if (!response) {
           this.invalidLogin = true;
           console.log(response);
         }
-        else{
+        else {
           this.invalidLogin = false;
           this.router.navigate(['/home'])
         }

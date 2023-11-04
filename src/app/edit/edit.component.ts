@@ -11,8 +11,8 @@ import { CanComponentDeactivate } from '../auth/auth.guard';
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
-export class EditComponent implements OnInit, CanComponentDeactivate{
-  plants : plants[] = [];
+export class EditComponent implements OnInit, CanComponentDeactivate {
+  plants: plants[] = [];
   @ViewChild('plantForm') form!: NgForm;
   plantname!: any;
   plantcountry!: any;
@@ -20,13 +20,13 @@ export class EditComponent implements OnInit, CanComponentDeactivate{
   plantimage!: any;
   saved!: boolean;
   submitClicked: boolean = false;
-  constructor(private serverService: ServerService, private router: Router, private route: ActivatedRoute) {}
+  constructor(private serverService: ServerService, private router: Router, private route: ActivatedRoute) { }
   ngOnInit(): void {
     this.saved = false;
     this.submitClicked = false;
   }
-  updatePlant(){
-    this.serverService.updatePlant(this.form.value,this.route.snapshot.params['id']);
+  updatePlant() {
+    this.serverService.updatePlant(this.form.value, this.route.snapshot.params['id']);
     this.saved = true;
     this.router.navigate(['/home']);
   }
@@ -40,5 +40,5 @@ export class EditComponent implements OnInit, CanComponentDeactivate{
       return confirm('Do you want to discard your changes?');
     }
     return true;
- }
+  }
 }

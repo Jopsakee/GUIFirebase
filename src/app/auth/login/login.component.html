@@ -1,25 +1,26 @@
 <app-header></app-header>
 <app-nav></app-nav>
 
-    <main>
-        <div class="container">
-            <h1>Login</h1>
-            <form #f="ngForm" (ngSubmit)="onLogin(f)">
-                <div *ngIf="invalidLogin" class="alert alert-danger">
-                    Invalid email and/or password.
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" ngModel>
-                </div>
-                <div class="form-group">
-                    <label for="wachtwoord">Password</label>
-                    <input type="password" class="form-control" id="wachtwoord" name="wachtwoord" placeholder="Enter your password" ngModel>
-                </div>
-                <button type="submit">Login</button>
-                <p class="text-left">Don't have an account? <a routerLink="/signup">Register</a></p>
-            </form>
-        </div>
-    </main>
+<main>
+    <div class="container">
+        <h1>Login</h1>
+        <form #f="ngForm" (ngSubmit)="onLogin(f)">
+            <div *ngIf="invalidLogin" class="alert alert-danger">
+                Invalid email and/or password.
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="wachtwoord">Password</label>
+                <input type="password" class="form-control" id="wachtwoord" name="wachtwoord"
+                    placeholder="Enter your password" ngModel>
+            </div>
+            <button type="submit">Login</button>
+            <p class="text-left">Don't have an account? <a routerLink="/signup">Register</a></p>
+        </form>
+    </div>
+</main>
 
 <app-footer></app-footer>

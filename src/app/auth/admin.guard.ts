@@ -9,21 +9,21 @@ import { admin } from './admin'
   providedIn: 'root'
 })
 export class AdminGuard implements CanActivate {
-  constructor(private serverService: ServerService, private authService:AuthService){}
+  constructor(private serverService: ServerService, private authService: AuthService) { }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.serverService.getAdmin(this.authService.getUid())
       .pipe(map(
         (Admin: admin | undefined) => {
-          if (Admin){
+          if (Admin) {
             return true;
           }
-          else{
+          else {
             return false;
           }
         }
       ));
   }
-    
+
 }

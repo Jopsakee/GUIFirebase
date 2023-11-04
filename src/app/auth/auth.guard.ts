@@ -5,7 +5,7 @@ import { EditComponent } from '../edit/edit.component';
 import { AuthService } from './auth.service';
 
 
-export interface CanComponentDeactivate{
+export interface CanComponentDeactivate {
   canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean;
 }
 
@@ -18,15 +18,15 @@ export interface CanComponentDeactivate{
 
 export class AuthGuard implements CanActivate, CanDeactivate<CanComponentDeactivate>{
 
-  constructor(private authService: AuthService, private router: Router){}
+  constructor(private authService: AuthService, private router: Router) { }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if(this.authService.isLoggedIn()){
+    if (this.authService.isLoggedIn()) {
       return true;
     }
-    else{
+    else {
       this.router.navigate(['/login']);
       return false;
     }
@@ -36,9 +36,8 @@ export class AuthGuard implements CanActivate, CanDeactivate<CanComponentDeactiv
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextStage?: RouterStateSnapshot
-  ): Observable<boolean> | Promise<boolean> | boolean 
-  {
+  ): Observable<boolean> | Promise<boolean> | boolean {
     return component.canDeactivate();
   }
-  
+
 }

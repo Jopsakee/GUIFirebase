@@ -34,7 +34,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
     ReactiveFormsModule,
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideFirestore(() =>getFirestore()),
+    provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
     AngularFireStorageModule,

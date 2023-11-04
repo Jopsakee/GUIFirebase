@@ -2,26 +2,26 @@
 <app-nav></app-nav>
 
 <main>
-    <table>
-        <thead>
-          <tr>
-            <th>Save image to Firebase Storage</th>
-          </tr>
-        </thead>
+  <table>
+    <thead>
+      <tr>
+        <th>Save image to Firebase Storage</th>
+      </tr>
+    </thead>
 
-        <tbody>
-          <tr>
-            <td>
-              <input type="file" id="img" (change)="chooseFile($event)">
-            </td> 
-          </tr>
-          <tr>      
-            <td>
-              <button (click)="addData()">Upload image</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <tbody>
+      <tr>
+        <td>
+          <input type="file" id="img" (change)="chooseFile($event)">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button (click)="addData()">Upload image</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </main>
 
 <app-footer></app-footer>

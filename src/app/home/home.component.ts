@@ -11,11 +11,11 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   plantSubscription!: Subscription;
-  plants : plants[] = [];
+  plants: plants[] = [];
   sortAscending = true;
   constructor(private router: Router, private serverService: ServerService) { }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.plants = [];
     this.onGetPlants();
   }
@@ -27,10 +27,10 @@ export class HomeComponent implements OnInit {
       })
   }
 
-  deletePlant(id: any){
-    if (confirm("Are you sure you want to delete this plant?")){
-    this.serverService.deletePlant(id);
-    this.router.navigate(['/home']);
+  deletePlant(id: any) {
+    if (confirm("Are you sure you want to delete this plant?")) {
+      this.serverService.deletePlant(id);
+      this.router.navigate(['/home']);
     }
   }
   toggleSortOrder() {

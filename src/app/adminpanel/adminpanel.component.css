@@ -12,7 +12,8 @@ table {
   margin: 0 auto;
 }
 
-th, td {
+th,
+td {
   padding: 8px;
   text-align: left;
 }
@@ -42,5 +43,3 @@ button.btn.btn-primary {
 button.btn.btn-primary:hover {
   background-color: #0056b3;
 }
-
-  
