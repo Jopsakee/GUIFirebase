@@ -2,11 +2,13 @@
     <ul>
       <ng-template [ngIf]="authService.isLoggedOut()">
         <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
         <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
       </ng-template>
       <ng-template [ngIf]="authService.isLoggedIn()">
         <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Plants</a></li>
         <li><a routerLink="/add" routerLinkActive="active">Add Plant</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
         <li><a (click)="onLogout()">Logout</a></li>
       </ng-template>
       <ng-template [ngIf]="authService.getUid() == 'hDxbvlAcC5RvvDbsPpw3J00gQQV2'">

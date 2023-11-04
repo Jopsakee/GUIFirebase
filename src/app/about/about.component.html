@@ -1,0 +1,22 @@
+<div class="about-page">
+
+    <h2>About Us</h2>
+    <p>{{ aboutText$ | async }}</p>
+    <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p>
+            Address: Jan Pieter de Nayerlaan 5, 2860 Sint-Katelijne-Waver
+            <br>
+            Phone: +32487171205
+            <br>
+            Email: r0902342@student.thomasmore.be
+        </p>
+    </div>
+
+    <button class="send-email-button" (click)="sendEmail()">
+        Send Email
+    </button>
+    <button class="back-to-home-button" (click)="navigateToHome()">
+        Back to Home
+      </button>
+</div>

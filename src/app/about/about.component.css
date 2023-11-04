@@ -1,0 +1,41 @@
+.about-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .contact-info {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .send-email-button {
+    background-color: #449944;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 1%;
+  }
+  
+  .send-email-button:hover {
+    background-color: #116611;
+  }
+
+  .back-to-home-button {
+    background-color: #449944;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 1%;
+  }
+  
+  .back-to-home-button:hover {
+    background-color: #116611;
+  }
+  

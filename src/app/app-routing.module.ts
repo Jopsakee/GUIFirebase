@@ -22,6 +22,7 @@ const routes: Routes = [
 { path: 'signup', component: SignupComponent },
 { path: 'login', component: LoginComponent },
 { path: 'adminpanel', component: AdminpanelComponent, canActivate: [AdminGuard,AuthGuard] },
+{ path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
 ];
 
 @NgModule({
